@@ -55,3 +55,12 @@ Nossa equipe de desenvolvedores irá avaliar código, simplicidade da solução,
 Tente automatizar ao máximo sua solução. Isso porque no caso de deploy em vários servidores, não é interessante que tenhamos que entrar de máquina em máquina para instalar cada componente da solução.
 
 Em caso de dúvida, entre em contato com o responsável pelo seu processo seletivo.
+
+## Considerações de Avaliação (Diferenciais)
+
+* Documentaçao do código
+* Organização/Legibilidade
+* Docker (importante como fator de desequilíbrio)
+* README e Makefile (este último não obrigatório, porém recomendado)
+* Testes unitários
+* Uso correto de dotNet core e de dotNet ef (este último não obrigatório, porém recomendado)
