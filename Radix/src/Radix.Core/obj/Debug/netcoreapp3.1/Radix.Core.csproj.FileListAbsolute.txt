@@ -1,0 +1,9 @@
+D:\Code\Projetos\radix-challenge\Radix\src\Radix.Core\bin\Debug\netcoreapp3.1\Radix.Core.deps.json
+D:\Code\Projetos\radix-challenge\Radix\src\Radix.Core\bin\Debug\netcoreapp3.1\Radix.Core.dll
+D:\Code\Projetos\radix-challenge\Radix\src\Radix.Core\obj\Debug\netcoreapp3.1\Radix.Core.csprojAssemblyReference.cache
+D:\Code\Projetos\radix-challenge\Radix\src\Radix.Core\obj\Debug\netcoreapp3.1\Radix.Core.AssemblyInfoInputs.cache
+D:\Code\Projetos\radix-challenge\Radix\src\Radix.Core\obj\Debug\netcoreapp3.1\Radix.Core.AssemblyInfo.cs
+D:\Code\Projetos\radix-challenge\Radix\src\Radix.Core\bin\Debug\netcoreapp3.1\Radix.Core.pdb
+D:\Code\Projetos\radix-challenge\Radix\src\Radix.Core\obj\Debug\netcoreapp3.1\Radix.Core.dll
+D:\Code\Projetos\radix-challenge\Radix\src\Radix.Core\obj\Debug\netcoreapp3.1\Radix.Core.pdb
+D:\Code\Projetos\radix-challenge\Radix\src\Radix.Core\obj\Debug\netcoreapp3.1\Radix.Core.csproj.CoreCompileInputs.cache

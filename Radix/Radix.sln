@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{4383E84C-8AEF-4441-9D78-B6DEF18ECF8D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApi", "WebApi", "{819D63CB-B3D3-4DD3-BCE4-F75C9B9DE79C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Events", "Events", "{1D759D69-31AB-4848-9FE0-1FD67F80178D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{2B21CE46-A56B-4E30-ADF2-0A5A944BCB8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Radix.Core", "src\Radix.Core\Radix.Core.csproj", "{B427BCE3-4D35-4788-AC1F-DEDDB1AF5EDB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B427BCE3-4D35-4788-AC1F-DEDDB1AF5EDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B427BCE3-4D35-4788-AC1F-DEDDB1AF5EDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B427BCE3-4D35-4788-AC1F-DEDDB1AF5EDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B427BCE3-4D35-4788-AC1F-DEDDB1AF5EDB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1D759D69-31AB-4848-9FE0-1FD67F80178D} = {4383E84C-8AEF-4441-9D78-B6DEF18ECF8D}
+		{2B21CE46-A56B-4E30-ADF2-0A5A944BCB8B} = {4383E84C-8AEF-4441-9D78-B6DEF18ECF8D}
+		{B427BCE3-4D35-4788-AC1F-DEDDB1AF5EDB} = {2B21CE46-A56B-4E30-ADF2-0A5A944BCB8B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {004E9620-015E-4507-9131-8B07C82273FD}
+	EndGlobalSection
+EndGlobal
