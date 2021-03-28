@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import {Route} from 'react-router';
-import {Layout} from './pages/Layout';
-import {Home} from './pages/Home';
-import {FetchData} from './pages/FetchData';
-import {Counter} from './pages/Counter';
+
+import {Layout} from './pages/Shared/Layout';
+import {Home} from './pages/Home/Home';
 
 import './custom.css';
 
@@ -14,8 +13,7 @@ export default class App extends Component {
         return (
             <Layout>
                 <Route exact path="/" component={Home} />
-                <Route path="/counter" component={Counter} />
-                <Route path="/fetch-data" component={FetchData} />
+                {/* <Route path="/counter" component={Counter} /> */}
             </Layout>
         );
     }

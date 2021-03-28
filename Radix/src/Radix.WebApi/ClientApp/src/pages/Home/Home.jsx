@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import EventHub from './EventHub';
+import EventHub from './Components/EventHub';
 
 export class Home extends Component {
     static displayName = Home.name;

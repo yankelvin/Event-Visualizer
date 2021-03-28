@@ -8,8 +8,8 @@ namespace Radix.Events.Application.Services
 {
     public interface IEventAppService : IDisposable
     {
-        Task InsertEvent(EventViewModel eventViewModel);
-        Task UpdateEvent(EventViewModel eventViewModel);
+        Task<bool> InsertEvent(EventViewModel eventViewModel);
+        Task<bool> UpdateEvent(EventViewModel eventViewModel);
 
         IEnumerable<EventViewModel> FindEventsByCountry(string country);
         IEnumerable<EventViewModel> FindEventsByRegion(Region region);

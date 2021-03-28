@@ -45,11 +45,14 @@ namespace Radix.WebApi.Controllers
             var viewModel = new EventViewModel(null, receiveEventViewModel.Value, country,
                 (Region)region, sensorName, receiveEventViewModel.Timestamp);
 
-            await _eventAppService.InsertEvent(viewModel);
+            var inserted = await _eventAppService.InsertEvent(viewModel);
+
+            if (!inserted)
+                return Result();
 
             await _eventHub.Clients.All.ReceiveEvent(viewModel);
 
-            return Result(true);
+            return Result(inserted);
         }
     }
 }

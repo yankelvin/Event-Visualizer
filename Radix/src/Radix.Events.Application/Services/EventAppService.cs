@@ -22,16 +22,16 @@ namespace Radix.Events.Application.Services
             _eventRepository = eventRepository;
         }
 
-        public async Task InsertEvent(EventViewModel eventViewModel)
+        public async Task<bool> InsertEvent(EventViewModel eventViewModel)
         {
             var command = _mapper.Map<InsertEventCommand>(eventViewModel);
-            await _bus.SendCommand(command);
+            return await _bus.SendCommand(command);
         }
 
-        public async Task UpdateEvent(EventViewModel eventViewModel)
+        public async Task<bool> UpdateEvent(EventViewModel eventViewModel)
         {
             var command = _mapper.Map<UpdateEventCommand>(eventViewModel);
-            await _bus.SendCommand(command);
+            return await _bus.SendCommand(command);
         }
 
         public IEnumerable<EventViewModel> FindEventsByCountry(string country)
