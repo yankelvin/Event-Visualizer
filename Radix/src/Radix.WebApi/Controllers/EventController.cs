@@ -1,10 +1,12 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using Radix.Core.Communication.Mediator;
 using Radix.Core.Enums;
 using Radix.Core.Messages.Notifications;
 using Radix.Events.Application.Services;
 using Radix.Events.Application.ViewModels;
+using Radix.Websocket;
 using System;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -16,11 +18,14 @@ namespace Radix.WebApi.Controllers
     public class EventController : ControllerBase
     {
         private readonly IEventAppService _eventAppService;
+        private readonly IHubContext<EventHub, IEventClient> _eventHub;
 
         public EventController(INotificationHandler<DomainNotification> notifications,
-            IMediatorHandler mediatorHandler, IEventAppService eventAppService) : base(notifications, mediatorHandler)
+            IMediatorHandler mediatorHandler, IEventAppService eventAppService, IHubContext<EventHub, IEventClient> eventHub)
+            : base(notifications, mediatorHandler)
         {
             _eventAppService = eventAppService;
+            _eventHub = eventHub;
         }
 
         [HttpPost]
@@ -41,6 +46,8 @@ namespace Radix.WebApi.Controllers
                 (Region)region, sensorName, receiveEventViewModel.Timestamp);
 
             await _eventAppService.InsertEvent(viewModel);
+
+            await _eventHub.Clients.All.ReceiveEvent(viewModel);
 
             return Result(true);
         }

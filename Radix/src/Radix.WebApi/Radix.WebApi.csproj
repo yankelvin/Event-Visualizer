@@ -26,6 +26,7 @@
     <ProjectReference Include="..\Radix.Core\Radix.Core.csproj" />
     <ProjectReference Include="..\Radix.Events.Application\Radix.Events.Application.csproj" />
     <ProjectReference Include="..\Radix.Events.Data\Radix.Events.Data.csproj" />
+    <ProjectReference Include="..\Radix.Websocket\Radix.Websocket.csproj" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

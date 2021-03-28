@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using Radix.Core.Data;
 using Radix.WebApi.Setup;
+using Radix.Websocket;
 
 namespace Radix.WebApi
 {
@@ -32,6 +33,8 @@ namespace Radix.WebApi
             services.RegisterServices();
             services.ConfigureMongoDbMapping();
             services.AddMappers();
+
+            services.AddSignalR();
 
             services.AddControllersWithViews();
 
@@ -67,6 +70,8 @@ namespace Radix.WebApi
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller}/{action=Index}/{id?}");
+
+                endpoints.MapHub<EventHub>("/hubs/event");
             });
 
             app.UseSpa(spa =>
