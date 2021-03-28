@@ -1,4 +1,6 @@
-﻿using Radix.Core.DomainObjects;
+﻿using MongoDB.Bson;
+using Radix.Core.DomainObjects;
+using Radix.Core.Enums;
 using System;
 
 namespace Radix.Events.Domain
@@ -12,8 +14,10 @@ namespace Radix.Events.Domain
         public TimeSpan Timestamp { get; private set; }
         public Status Status { get; private set; }
 
-        public Event(string value, string country, Region region, string sensorName, TimeSpan timestamp, Status status)
+        public Event(ObjectId id, string value, string country, Region region,
+            string sensorName, TimeSpan timestamp, Status status)
         {
+            Id = id;
             Value = value;
             Country = country;
             Region = region;
