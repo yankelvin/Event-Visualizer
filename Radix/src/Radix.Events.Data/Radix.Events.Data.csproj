@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Radix.Core\Radix.Core.csproj" />
+    <ProjectReference Include="..\Radix.Events.Domain\Radix.Events.Domain.csproj" />
   </ItemGroup>
 
 </Project>
