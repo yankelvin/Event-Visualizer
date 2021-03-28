@@ -1,5 +1,4 @@
 ﻿using Radix.Core.Enums;
-using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace Radix.Events.Application.ViewModels
@@ -22,8 +21,18 @@ namespace Radix.Events.Application.ViewModels
         public string SensorName { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
-        public TimeSpan Timestamp { get; set; }
+        public string TimeStamp { get; set; }
 
         public Status Status { get; set; }
+
+        public EventViewModel(string id, string value, string country, Region region, string sensorName, string timeStamp)
+        {
+            Id = id;
+            Value = value;
+            Country = country;
+            Region = region;
+            SensorName = sensorName;
+            TimeStamp = timeStamp;
+        }
     }
 }

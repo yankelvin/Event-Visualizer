@@ -31,7 +31,7 @@ namespace Radix.Events.Domain.Commands
             var status = string.IsNullOrEmpty(message.Value) ? Status.Error : Status.Processed;
 
             var _event = new Event(eventId, message.Value, message.Country, message.Region, message.SensorName,
-                message.TimeSpan, status);
+                message.TimeStamp, status);
 
             _eventRepository.InsertEvent(_event);
 
@@ -46,7 +46,7 @@ namespace Radix.Events.Domain.Commands
             var status = string.IsNullOrEmpty(message.Value) ? Status.Error : Status.Processed;
 
             var _event = new Event(new ObjectId(message.Id), message.Value, message.Country, message.Region, message.SensorName,
-                message.TimeSpan, status);
+                message.TimeStamp, status);
 
             _eventRepository.UpdateEvent(_event);
 

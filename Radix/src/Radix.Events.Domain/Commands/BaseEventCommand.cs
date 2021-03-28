@@ -1,7 +1,6 @@
 ﻿using FluentValidation;
 using Radix.Core.Enums;
 using Radix.Core.Messages;
-using System;
 
 namespace Radix.Events.Domain.Commands
 {
@@ -12,17 +11,17 @@ namespace Radix.Events.Domain.Commands
         public string Country { get; private set; }
         public Region Region { get; private set; }
         public string SensorName { get; private set; }
-        public TimeSpan TimeSpan { get; private set; }
+        public string TimeStamp { get; private set; }
 
         protected BaseEventCommand(string id, string value, string country, Region region,
-            string sensorName, TimeSpan timeSpan)
+            string sensorName, string timeStamp)
         {
             Id = id;
             Value = value;
             Country = country;
             Region = region;
             SensorName = sensorName;
-            TimeSpan = timeSpan;
+            TimeStamp = timeStamp;
         }
 
         public override bool IsValid()
@@ -37,9 +36,9 @@ namespace Radix.Events.Domain.Commands
     {
         public BaseEventCommandValidation()
         {
-            RuleFor(c => c.Value)
+            RuleFor(c => c.TimeStamp)
                 .NotEmpty()
-                .WithMessage("Valor do evento não foi informado.");
+                .WithMessage("Horário do evento não foi informado.");
 
             RuleFor(c => c.Country)
                 .NotEmpty()

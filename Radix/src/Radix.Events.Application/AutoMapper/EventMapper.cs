@@ -13,10 +13,10 @@ namespace Radix.Events.Application.AutoMapper
                 .ForMember(e => e.Id, m => m.MapFrom(o => o.Id.ToString()));
 
             CreateMap<EventViewModel, InsertEventCommand>()
-                .ConstructUsing(e => new InsertEventCommand(e.Id, e.Value, e.Country, e.Region, e.SensorName, e.Timestamp));
+                .ConstructUsing(e => new InsertEventCommand(e.Id, e.Value, e.Country, e.Region, e.SensorName, e.TimeStamp));
 
             CreateMap<EventViewModel, UpdateEventCommand>()
-                .ConstructUsing(e => new UpdateEventCommand(e.Id, e.Value, e.Country, e.Region, e.SensorName, e.Timestamp));
+                .ConstructUsing(e => new UpdateEventCommand(e.Id, e.Value, e.Country, e.Region, e.SensorName, e.TimeStamp));
         }
     }
 }
