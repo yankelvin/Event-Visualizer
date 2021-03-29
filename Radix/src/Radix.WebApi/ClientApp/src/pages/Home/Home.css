@@ -1,0 +1,31 @@
+.region-card {
+    border: none;
+    transition: all 0.3s ease-in-out;
+    border-radius: 12px;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%),
+        0 3px 1px -2px rgb(0 0 0 / 20%);
+}
+
+.region-card:hover {
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.info-card {
+    height: 80px;
+
+    padding: 0px auto;
+    text-align: center;
+    justify-content: center;
+}
+
+.div-info {
+    justify-content: space-around;
+}
+
+.form-custom {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%),
+        0 3px 1px -2px rgb(0 0 0 / 20%);
+}

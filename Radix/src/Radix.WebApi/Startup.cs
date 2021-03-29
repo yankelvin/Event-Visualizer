@@ -7,8 +7,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using Radix.Core.Data;
+using Radix.WebApi.Hubs;
 using Radix.WebApi.Setup;
-using Radix.Websocket;
 
 namespace Radix.WebApi
 {

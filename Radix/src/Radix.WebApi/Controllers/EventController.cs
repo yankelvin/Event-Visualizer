@@ -1,12 +1,13 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
+using MongoDB.Bson;
 using Radix.Core.Communication.Mediator;
 using Radix.Core.Enums;
 using Radix.Core.Messages.Notifications;
 using Radix.Events.Application.Services;
 using Radix.Events.Application.ViewModels;
-using Radix.Websocket;
+using Radix.WebApi.Hubs;
 using System;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -43,7 +44,11 @@ namespace Radix.WebApi.Controllers
             }
 
             var viewModel = new EventViewModel(null, receiveEventViewModel.Value, country,
-                (Region)region, sensorName, receiveEventViewModel.Timestamp);
+                (Region)region, sensorName, receiveEventViewModel.Timestamp)
+            {
+                Id = ObjectId.GenerateNewId().ToString(),
+                Status = string.IsNullOrEmpty(receiveEventViewModel.Value) ? Status.Error : Status.Processed
+            };
 
             var inserted = await _eventAppService.InsertEvent(viewModel);
 
@@ -53,6 +58,14 @@ namespace Radix.WebApi.Controllers
             await _eventHub.Clients.All.ReceiveEvent(viewModel);
 
             return Result(inserted);
+        }
+
+        [HttpGet]
+        public IActionResult GetAllEvents()
+        {
+            var events = _eventAppService.FindEvents();
+
+            return Result(events);
         }
     }
 }

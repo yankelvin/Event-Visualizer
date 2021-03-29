@@ -11,6 +11,7 @@ namespace Radix.Events.Application.Services
         Task<bool> InsertEvent(EventViewModel eventViewModel);
         Task<bool> UpdateEvent(EventViewModel eventViewModel);
 
+        IEnumerable<EventViewModel> FindEvents();
         IEnumerable<EventViewModel> FindEventsByCountry(string country);
         IEnumerable<EventViewModel> FindEventsByRegion(Region region);
     }

@@ -1,3 +1,4 @@
+import './Home.css';
 import React, {Component} from 'react';
 
 import EventHub from './Components/EventHub';

@@ -8,6 +8,7 @@ import {
     NavItem,
     NavLink,
 } from 'reactstrap';
+
 import {Link} from 'react-router-dom';
 import './NavMenu.css';
 
@@ -38,7 +39,7 @@ export class NavMenu extends Component {
                 >
                     <Container>
                         <NavbarBrand tag={Link} to="/">
-                            Radix.WebApi
+                            Radix - Leitura de Sensores
                         </NavbarBrand>
                         <NavbarToggler
                             onClick={this.toggleNavbar}

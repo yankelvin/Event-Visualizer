@@ -2,7 +2,7 @@
 using Radix.Events.Application.ViewModels;
 using System.Threading.Tasks;
 
-namespace Radix.Websocket
+namespace Radix.WebApi.Hubs
 {
     public class EventHub : Hub<IEventClient>
     {
@@ -10,10 +10,5 @@ namespace Radix.Websocket
         {
             await Clients.All.ReceiveEvent(_event);
         }
-    }
-
-    public interface IEventClient
-    {
-        Task ReceiveEvent(EventViewModel _event);
     }
 }
