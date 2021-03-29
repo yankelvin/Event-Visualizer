@@ -1,12 +1,14 @@
 import React, {useState, useEffect} from 'react';
-import {HubConnect} from '../../../services/HubService';
+
+import HeaderCard from './HeaderCard';
+import Badge from 'react-bootstrap/Badge';
+import Table from 'react-bootstrap/Table';
+import TablePagination from '../../Shared/TablePagination';
 
 import {Region, Status} from '../../../core/Enum';
+import {HubConnect} from '../../../services/HubService';
 import {GetEvents} from '../../../services/EventService';
 import {ConvertTimeStampToDateTime, OnlyUnique} from '../../../core/Util';
-
-import Table from 'react-bootstrap/Table';
-import HeaderCard from './HeaderCard';
 
 let state = [];
 
@@ -55,6 +57,11 @@ export default function EventHub() {
         return quantitys;
     };
 
+    const eventsBySensorColumns = [
+        {dataField: 'name', text: 'Nome do Sensor'},
+        {dataField: 'quantity', text: 'Quantidade de Leituras'},
+    ];
+
     return (
         <div className="container card form-custom">
             <div className="row div-info">
@@ -71,23 +78,10 @@ export default function EventHub() {
                 <b>Número de Eventos Por Sensor</b>
             </div>
 
-            <Table responsive hover>
-                <thead>
-                    <tr>
-                        <th>Nome do Sensor</th>
-                        <th>Quantidade de leituras</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    {getSensorNamesDistinct().map((sensor) => (
-                        <tr key={sensor.name}>
-                            <td>{sensor.name}</td>
-                            <td>{sensor.quantity}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </Table>
+            <TablePagination
+                columns={eventsBySensorColumns}
+                data={getSensorNamesDistinct()}
+            />
 
             <div className="mb-3 h5">
                 <b>Leitura dos Eventos</b>
@@ -117,7 +111,15 @@ export default function EventHub() {
                             <td>
                                 {ConvertTimeStampToDateTime(event.timeStamp)}
                             </td>
-                            <td className="">{Status[event.status]}</td>
+                            <td className="">
+                                <Badge
+                                    variant={
+                                        event.status == 0 ? 'success' : 'danger'
+                                    }
+                                >
+                                    {Status[event.status]}
+                                </Badge>
+                            </td>
                         </tr>
                     ))}
                 </tbody>
