@@ -10,6 +10,17 @@ import {HubConnect} from '../../../services/HubService';
 import {GetEvents} from '../../../services/EventService';
 import {ConvertTimeStampToDateTime, OnlyUnique} from '../../../core/Util';
 
+import {
+    BarChart,
+    Bar,
+    CartesianGrid,
+    XAxis,
+    YAxis,
+    Tooltip,
+    Legend,
+    ResponsiveContainer,
+} from 'recharts';
+
 let state = [];
 
 export default function EventHub() {
@@ -57,6 +68,41 @@ export default function EventHub() {
         return quantitys;
     };
 
+    const GetNumericEvents = () => {
+        const eventsWithNumber = events.filter(
+            (e) => !Number.isNaN(parseFloat(e.value)),
+        );
+
+        return eventsWithNumber;
+    };
+
+    const GetChartData = () => {
+        const eventsWithNumber = GetNumericEvents();
+
+        const data = eventsWithNumber.map((e) => {
+            return {
+                sensorName: e.sensorName,
+                value: parseFloat(e.value),
+            };
+        });
+
+        let groupBy = [];
+
+        const uniqueEvents = data.map((d) => d.sensorName).filter(OnlyUnique);
+
+        uniqueEvents.forEach((e) => {
+            let sum = 0;
+
+            data.filter((d) => d.sensorName === e).forEach((d) => {
+                sum += d.value;
+            });
+
+            groupBy.push({sensorName: e, value: sum});
+        });
+
+        return groupBy;
+    };
+
     const eventsBySensorColumns = [
         {dataField: 'name', text: 'Nome do Sensor'},
         {dataField: 'quantity', text: 'Quantidade de Leituras'},
@@ -64,18 +110,25 @@ export default function EventHub() {
 
     return (
         <div className="container card form-custom">
+            <div className="mt-3 h5">
+                <b>Número de Eventos por Região</b>
+            </div>
+
             <div className="row div-info">
                 {Object.keys(Region).map((r) => (
                     <HeaderCard
                         key={r}
                         title={Region[r]}
-                        text={events.filter((e) => e.region == r).length}
+                        text={
+                            events.filter((e) => e.region.toString() === r)
+                                .length
+                        }
                     />
                 ))}
             </div>
 
             <div className="mb-3 h5">
-                <b>Número de Eventos Por Sensor</b>
+                <b>Número de Eventos por Sensor</b>
             </div>
 
             <TablePagination
@@ -84,6 +137,20 @@ export default function EventHub() {
             />
 
             <div className="mb-3 h5">
+                <b>Gráfico de Eventos com Valores Númericos</b>
+            </div>
+
+            <BarChart width={1050} height={250} data={GetChartData()}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="sensorName" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <ResponsiveContainer />
+                <Bar dataKey="value" fill="#8884d8" />
+            </BarChart>
+
+            <div className="mt-3 mb-3 h5">
                 <b>Leitura dos Eventos</b>
             </div>
 
@@ -114,7 +181,9 @@ export default function EventHub() {
                             <td className="">
                                 <Badge
                                     variant={
-                                        event.status == 0 ? 'success' : 'danger'
+                                        event.status === 0
+                                            ? 'success'
+                                            : 'danger'
                                     }
                                 >
                                     {Status[event.status]}

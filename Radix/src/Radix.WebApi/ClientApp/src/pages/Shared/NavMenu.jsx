@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+
 import {
     Collapse,
     Container,
@@ -52,22 +53,21 @@ export class NavMenu extends Component {
                         >
                             <ul className="navbar-nav flex-grow">
                                 <NavItem>
-                                    <NavLink
-                                        tag={Link}
+                                    <a
                                         className="text-dark"
-                                        to="/"
+                                        href="https://github.com/yankelvin"
                                     >
-                                        Home
-                                    </NavLink>
+                                        GitHub
+                                    </a>
                                 </NavItem>
-                                <NavItem>
-                                    <NavLink
-                                        tag={Link}
+
+                                <NavItem className="ml-3">
+                                    <a
                                         className="text-dark"
-                                        to="/counter"
+                                        href="https://www.linkedin.com/in/yan-kelvin-313b3b160/"
                                     >
-                                        Counter
-                                    </NavLink>
+                                        LinkedIn
+                                    </a>
                                 </NavItem>
                             </ul>
                         </Collapse>
