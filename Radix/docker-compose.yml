@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  radix.webapi:
+    image: ${DOCKER_REGISTRY-}radixwebapi
+    build:
+      context: .
+      dockerfile: src\Radix.WebApi\Dockerfile
