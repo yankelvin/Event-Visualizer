@@ -5,6 +5,7 @@ using Radix.Core.Data;
 using Radix.Core.Messages.Notifications;
 using Radix.Events.Application.AutoMapper;
 using Radix.Events.Application.Services;
+using Radix.Events.Application.Tests;
 using Radix.Events.Data;
 using Radix.Events.Domain.Commands;
 using Radix.Events.Domain.Interfaces;

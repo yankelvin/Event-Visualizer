@@ -23,6 +23,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Radix.Events.Application", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Radix.WebApi", "src\Radix.WebApi\Radix.WebApi.csproj", "{15CBA5DA-FDF1-490E-9AEF-749B0697C1B7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Radix.Events.Application.Tests", "tests\Radix.Events.Application.Tests\Radix.Events.Application.Tests.csproj", "{A3AE9D3A-4E46-4F08-A552-FB88034E7251}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{15CBA5DA-FDF1-490E-9AEF-749B0697C1B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15CBA5DA-FDF1-490E-9AEF-749B0697C1B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15CBA5DA-FDF1-490E-9AEF-749B0697C1B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3AE9D3A-4E46-4F08-A552-FB88034E7251}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3AE9D3A-4E46-4F08-A552-FB88034E7251}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3AE9D3A-4E46-4F08-A552-FB88034E7251}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3AE9D3A-4E46-4F08-A552-FB88034E7251}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +68,7 @@ Global
 		{99A2A6FB-7AB4-41AF-AE3B-A9C0937CED4C} = {1D759D69-31AB-4848-9FE0-1FD67F80178D}
 		{8E2AD10F-7463-46CD-80EB-B15558D201A8} = {1D759D69-31AB-4848-9FE0-1FD67F80178D}
 		{15CBA5DA-FDF1-490E-9AEF-749B0697C1B7} = {819D63CB-B3D3-4DD3-BCE4-F75C9B9DE79C}
+		{A3AE9D3A-4E46-4F08-A552-FB88034E7251} = {986B9BDF-C90E-486D-81D1-BDD5FA962D6C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {004E9620-015E-4507-9131-8B07C82273FD}

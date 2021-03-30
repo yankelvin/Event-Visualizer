@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\tests\Radix.Events.Application.Tests\Radix.Events.Application.Tests.csproj" />
     <ProjectReference Include="..\Radix.Core\Radix.Core.csproj" />
     <ProjectReference Include="..\Radix.Events.Application\Radix.Events.Application.csproj" />
     <ProjectReference Include="..\Radix.Events.Data\Radix.Events.Data.csproj" />
