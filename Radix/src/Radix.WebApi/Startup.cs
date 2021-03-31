@@ -43,6 +43,22 @@ namespace Radix.WebApi
             {
                 configuration.RootPath = "ClientApp/build";
             });
+
+            services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v1",
+                    new Microsoft.OpenApi.Models.OpenApiInfo
+                    {
+                        Title = "Radix",
+                        Version = "v1",
+                        Description = "Desafio Radix",
+                        Contact = new Microsoft.OpenApi.Models.OpenApiContact
+                        {
+                            Name = "Yan Kelvin",
+                            Url = new System.Uri("https://github.com/yankelvin")
+                        }
+                    });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,6 +74,13 @@ namespace Radix.WebApi
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.RoutePrefix = "swagger";
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Radix");
+            });
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

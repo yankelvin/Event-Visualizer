@@ -29,6 +29,11 @@ namespace Radix.WebApi.Controllers
             _eventHub = eventHub;
         }
 
+        /// <summary>
+        /// Inserting a Event
+        /// </summary>
+        /// <param name="receiveEventViewModel"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> InsertEvent([FromBody] ReceiveEventViewModel receiveEventViewModel)
         {
@@ -60,10 +65,48 @@ namespace Radix.WebApi.Controllers
             return Result(inserted);
         }
 
+        /// <summary>
+        /// Get All Events
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult GetAllEvents()
         {
             var events = _eventAppService.FindEvents();
+
+            return Result(events);
+        }
+
+        /// <summary>
+        /// Find Events By Country
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("FindEventsByCountry")]
+        public IActionResult FindEventsByCountry(string country)
+        {
+            var events = _eventAppService.FindEventsByCountry(country);
+
+            return Result(events);
+        }
+
+        /// <summary>
+        /// Find Events By Region
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("FindEventsByRegion")]
+        public IActionResult FindEventsByRegion(string region)
+        {
+            var result = Enum.TryParse(typeof(Region), region, true, out var _region);
+
+            if (!result)
+            {
+                NotifyError(MethodBase.GetCurrentMethod().Name, "Região inválida.");
+                return Result();
+            }
+
+            var events = _eventAppService.FindEventsByRegion((Region)_region);
 
             return Result(events);
         }
