@@ -7,6 +7,7 @@ FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
 COPY ["src/Radix.WebApi/Radix.WebApi.csproj", "src/Radix.WebApi/"]
 COPY ["tests/Radix.Events.Application.Tests/Radix.Events.Application.Tests.csproj", "tests/Radix.Events.Application.Tests/"]
+COPY ["tests/Radix.Events.Domain.Tests/Radix.Events.Domain.Tests.csproj", "tests/Radix.Events.Domain.Tests/"]
 COPY ["src/Radix.Events.Application/Radix.Events.Application.csproj", "src/Radix.Events.Application/"]
 COPY ["src/Radix.Core/Radix.Core.csproj", "src/Radix.Core/"]
 COPY ["src/Radix.Events.Domain/Radix.Events.Domain.csproj", "src/Radix.Events.Domain/"]

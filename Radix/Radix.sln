@@ -27,6 +27,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Radix.Events.Application.Te
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{A9CBFF51-2375-404A-96FD-B073D69805DC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Radix.Events.Domain.Tests", "tests\Radix.Events.Domain.Tests\Radix.Events.Domain.Tests.csproj", "{2CFA5FE8-8D60-4D80-8F20-FC2D149C4767}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{A9CBFF51-2375-404A-96FD-B073D69805DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9CBFF51-2375-404A-96FD-B073D69805DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9CBFF51-2375-404A-96FD-B073D69805DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CFA5FE8-8D60-4D80-8F20-FC2D149C4767}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CFA5FE8-8D60-4D80-8F20-FC2D149C4767}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CFA5FE8-8D60-4D80-8F20-FC2D149C4767}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CFA5FE8-8D60-4D80-8F20-FC2D149C4767}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,6 +81,7 @@ Global
 		{8E2AD10F-7463-46CD-80EB-B15558D201A8} = {1D759D69-31AB-4848-9FE0-1FD67F80178D}
 		{15CBA5DA-FDF1-490E-9AEF-749B0697C1B7} = {819D63CB-B3D3-4DD3-BCE4-F75C9B9DE79C}
 		{A3AE9D3A-4E46-4F08-A552-FB88034E7251} = {986B9BDF-C90E-486D-81D1-BDD5FA962D6C}
+		{2CFA5FE8-8D60-4D80-8F20-FC2D149C4767} = {986B9BDF-C90E-486D-81D1-BDD5FA962D6C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {004E9620-015E-4507-9131-8B07C82273FD}

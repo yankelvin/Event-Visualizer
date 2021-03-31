@@ -9,7 +9,6 @@ using Radix.Events.Application.AutoMapper;
 using Radix.Events.Application.Services;
 using Radix.Events.Application.ViewModels;
 using Radix.Events.Domain;
-using Radix.Events.Domain.Commands;
 using Radix.Events.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -50,11 +49,6 @@ namespace Radix.Events.Application.Tests
             return viewModel;
         }
 
-        public InsertEventCommand GenerateInsertEventCommand(EventViewModel viewModel)
-        {
-            return new InsertEventCommand(viewModel.Id, viewModel.Value, viewModel.Country, viewModel.Region, viewModel.SensorName, viewModel.TimeStamp);
-        }
-
         public Event GenerateEvent(ObjectId? id = null, string value = null, string country = null,
             Region region = Region.Norte, string sensorName = null, string timeStamp = null, Status status = Status.Processed)
         {
@@ -64,7 +58,7 @@ namespace Radix.Events.Application.Tests
 
         public void SetupSendCommand<T>(bool result) where T : Command
         {
-            Mocker.GetMock<IMediatorHandler>().Setup(m => m.SendCommand<T>(It.IsAny<T>()))
+            Mocker.GetMock<IMediatorHandler>().Setup(m => m.SendCommand(It.IsAny<T>()))
                 .Returns(Task.FromResult(result));
         }
 
