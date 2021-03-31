@@ -26,7 +26,7 @@ docker build -t radix .
 docker run --name=radix  -p 5000:5000 -d radix -e NODE_ENV=production
 ```
 
-O código acima irá buildar a aplicação e em seguida rodar na porta 500.
+O código acima irá buildar a aplicação e em seguida rodar na porta 5000.
 
 ## Documentação da Api
 Para documentação foi utilizado o Swagger, para acessá-la, acesse a url:
@@ -38,7 +38,7 @@ http://localhost:5000/swagger/index.html
 Ideias futuras que pensei foram:
 * Deixar o Frontend responsivo;
 * Devido ao Frontend ser focado em visualização, acredito que uma boa ideia seria criar um Dashboard dinâmico, por exemplo, quando clicássemos em cada Região, os dados seriam filtrados com base na Região clicada, como acontece no Power Bi;
-* Criar os Events de domínio para executar alguma regra quando um sensor tem falha X vezes, podendo por exemplo disparar um e-mail ou um alerta;
+* Criar os Eventos de domínio para executar alguma regra quando um sensor tem falha X vezes, podendo por exemplo disparar um e-mail ou um alerta;
 
 # Desafio para vaga de analista júnior
 
