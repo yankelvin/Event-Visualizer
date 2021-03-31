@@ -2,6 +2,7 @@
 
 ## Tecnologias
 * .Net Core 3.1
+* XUnit e Moq;
 * SignalR
 * Node.js 14.x
 * React
