@@ -5,4 +5,4 @@ services:
     image: ${DOCKER_REGISTRY-}radixwebapi
     build:
       context: .
-      dockerfile: src\Radix.WebApi\Dockerfile
+      dockerfile: src/Radix.WebApi/Dockerfile
