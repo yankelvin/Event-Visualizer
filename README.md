@@ -1,3 +1,35 @@
+# Event Visualizer
+
+## Tecnologias
+* .Net Core 3.1
+* SignalR
+* React
+* Mongo Db em Cloud
+* Docker
+
+## Sobre a solução
+A solução foi feita em cima de uma arquitetura em camadas em cima do DDD (Domain Drive Design). Por ser uma solução em cima de cadastro e visualização de eventos em tempo real foram tomadas algumas decisões:
+* Utilização do MongoDb para armazenamento, visto que não era necessário haver relacionamentos e a sua leitura se tornaria mais rápida;
+* Utilização de um Bus em memória para atuar como serviço de comunicação entre as camadas, essa decisão foi tomada visto que poderia haver um aumento no número de requisições para inserção de eventos e então poderia plugar esse Bus em alguma solução de Bus em Nuvem;
+* O SignalR foi escolhido para que pudessemos trabalhar com websocket, ou seja, crio uma conexão entre o Frontend e o Backend de forma que não tenha necessidade de "requisições" ou pollings para que a visualização seja atualizada automáticamente;
+* O React foi escolhido devido a sua manipulação de estados, assim juntamente com o SignalR quando recebo uma nova atualização preciso apenas inserir o dado no meu "State" e então o componente já é atualizado em tempo real, além disso, o React é uma ótima ferramenta para trabalhar de forma componentizada.
+
+## Instruções de Uso
+Para rodar a aplicação é necessário ter o Docker instalado, configurado para receber Linux Containers. Tendo as necessidades previamente instaladas, necessita apenas rodar alguns comandos.
+
+```bash
+docker build -t radix .
+docker run --name=radix  -p 5000:5000 -d radix -e NODE_ENV=production
+```
+
+O código acima irá buildar a aplicação e em seguida rodar na porta 500.
+
+## Documentação da Api
+Para documentação foi utilizado o Swagger, para acessá-la, acesse a url:
+```
+http://localhost:5000/swagger/index.html
+```
+
 # Desafio para vaga de analista júnior
 
 ## Considerações Gerais
