@@ -6,7 +6,7 @@
 * SignalR
 * Node.js 14.x
 * React
-* Mongo Db em Cloud
+* MongoDb com MongoDb.Driver
 * Docker
 
 ## Por ser uma solução em cima de cadastro e visualização de eventos em tempo real foram tomadas algumas decisões:
