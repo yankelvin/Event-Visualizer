@@ -22,8 +22,8 @@ A solução foi feita em cima de uma arquitetura em camadas com base no DDD (Dom
 Para rodar a aplicação é necessário ter o Docker instalado, configurado para receber Linux Containers. Tendo as necessidades previamente instaladas, necessita apenas rodar alguns comandos.
 
 ```bash
-docker build -t radix .
-docker run --name=radix  -p 5000:5000 -d radix -e NODE_ENV=production
+docker build -t event .
+docker run --name=event  -p 5000:5000 -d event -e NODE_ENV=production
 ```
 
 O código acima irá buildar a aplicação e em seguida rodar na porta 5000.
